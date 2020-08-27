@@ -1,6 +1,6 @@
 {
   "name": "semo-plugin-repl-hint",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Semo plugin to provide ability to get dev hints from devhints.io in REPL",
   "keywords": [
     "semo",
