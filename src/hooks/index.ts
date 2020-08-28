@@ -26,7 +26,7 @@ export = (Utils) => {
 
               const { markdown, title } = converted
 
-              if (opts.copy || opts.C) {
+              if (opts.copy || opts.copyOnly) {
                 await convertMarkdownToFile({
                   format: 'clipboard',
                   markdown,
@@ -38,11 +38,12 @@ export = (Utils) => {
                 })
               }
 
-              Utils.consoleReader(marked(markdown), {
-                plugin: 'semo-plugin-repl-hint',
-                identifier: input
-              })
-
+              if (!opts.copyOnly) {
+                Utils.consoleReader(marked(markdown), {
+                  plugin: 'semo-plugin-repl-hint',
+                  identifier: input
+                })
+              }
 
                // @ts-ignore
               this.displayPrompt()
